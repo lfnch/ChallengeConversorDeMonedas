@@ -2,6 +2,11 @@ package com.lfn.challengeconversordemodenas.modelos;
 
 import java.util.Map;
 
+/*
+ * ApiExchageRate
+ * clase para usar la api EXCHANGE RATE
+ * https://app.exchangerate-api.com/
+ */
 public record ApiExchageRate (
 		String result,
 		String documentation,

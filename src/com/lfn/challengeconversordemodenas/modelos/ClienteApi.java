@@ -13,7 +13,7 @@ import java.net.http.HttpResponse;
 public class ClienteApi {
 	public String get(String apiUrl) throws IOException, InterruptedException {
 		//Conectarce
-		HttpClient  cliente   = HttpClient.newHttpClient();
+		HttpClient cliente = HttpClient.newHttpClient();
 		HttpRequest solicitud = HttpRequest.newBuilder()
 				.uri(URI.create(apiUrl))
 				.build();
