@@ -36,7 +36,8 @@ public class ManejadorMenu {
 				
 				//Historial
 				case "h" :
-					
+					ManejadorArchivo archivo = new ManejadorArchivo();
+					archivo.leerArchivo();
 				break;
 				
 				//Letra equivocada
@@ -65,18 +66,23 @@ public class ManejadorMenu {
 					4 - regresar.
 					-----------------------------------------------------
 					""");
-			opcion = this._scanner.nextInt();
-			this._scanner.nextLine();
-			this._apiSeleccionada = this._seleccionarApi(opcion);
-			if(opcion == 1 || opcion == 2 || opcion == 3) {
-				this._menuConversion();
-			} else {
-				if(opcion != 4) {
-					System.out.println("Opción no válida. Por favor, intente de nuevo.");
+	
+			try {
+				opcion = this._scanner.nextInt();
+				this._scanner.nextLine();
+				this._apiSeleccionada = this._seleccionarApi(opcion);
+				if(opcion == 1 || opcion == 2 || opcion == 3) {
+					this._menuConversion();
+				} else {
+					if(opcion != 4) {
+						System.out.println("Opción no válida. Por favor, intente de nuevo.");
+					}
 				}
+			} catch (Exception e) {
+				this._scanner.nextLine();
+				System.out.println("Opción no válida. Por favor, intente de nuevo.");
 			}
 		}
-		
 	}
 	
 	/*

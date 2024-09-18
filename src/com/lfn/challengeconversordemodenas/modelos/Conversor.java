@@ -15,13 +15,15 @@ public class Conversor {
 		this._valor = valor;
 	}
 
-	public void convertir() throws IOException, InterruptedException {
+	public void convertir() throws IOException  {
 		String apiUrl = "";
 		ApiExchageRate apiExchangeRate;
 		ApiOpenExchangeRates apiOpenExchangesRates;
 		ApiCoinGecko apiCoinGecko;
-		double valor_conversion = 0;
-
+		ManejadorArchivo archivo = new ManejadorArchivo();
+		double valorConversion = 0;
+		
+		System.out.println("Estado : Conectando con la api.");
 		
 		if(this._api == "exchageRate") {
 			/*
@@ -42,24 +44,34 @@ public class Conversor {
 		ClienteApi clienteApi = new ClienteApi();
 		String json = clienteApi.get(apiUrl);
 		
-		//Covertir Json en objecto
-		AnalizarJson analizar = new AnalizarJson();
-		
-
-		if(this._api == "exchageRate") {
-			apiExchangeRate = analizar.fromJson(json, ApiExchageRate.class);
-			valor_conversion = apiExchangeRate.conversion_result();
+		if(!json.equals("NO_CONEXION")) {
+			
+			System.out.println("Estado : Analizando resultados.");
+			//Covertir Json en objecto
+			AnalizarJson analizar = new AnalizarJson();
+			
+			if(this._api == "exchageRate") {
+				apiExchangeRate = analizar.fromJson(json, ApiExchageRate.class);
+				valorConversion = apiExchangeRate.conversion_result();
+			}
+			
+			if(this._api == "openExchangeRates") {
+				apiCoinGecko = analizar.fromJson(json, ApiCoinGecko.class);
+			}
+			
+			if(this._api == "coinGecko") {
+				apiOpenExchangesRates = analizar.fromJson(json, ApiOpenExchangeRates.class);
+			}
+			
+			System.out.println("Estado : Guardando registro.");
+			//Guardar Registro
+			archivo.setDatosConversion(this._api, this._monedaDe, this._monedaA, this._valor, valorConversion);
+			archivo.escribirEnArchivo();
+			
+			System.out.println("Estado : Mostrando resultado.");
+			//Imprimir resultado
+			System.out.println("\n" + String.format("%.2f %s EQUIVALE A : %.2f %s", this._valor, this._monedaDe, valorConversion, this._monedaA));
+			System.out.println("-----------------------------------------------------\n");
 		}
-		
-		if(this._api == "openExchangeRates") {
-			apiCoinGecko = analizar.fromJson(json, ApiCoinGecko.class);
-		}
-		
-		if(this._api == "coinGecko") {
-			apiOpenExchangesRates = analizar.fromJson(json, ApiOpenExchangeRates.class);
-		}
-		
-		System.out.println(String.format("%.2f %s EQUIVALE A : %.2f %s", this._valor, this._monedaDe, valor_conversion, this._monedaA));
-		System.out.println("-----------------------------------------------------\n");
 	}   
 }
