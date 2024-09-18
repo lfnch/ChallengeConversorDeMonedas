@@ -16,6 +16,9 @@ public record ApiExchageRate (
 		int time_next_update_unix,
 		String time_next_update_utc,
 		String base_code,
+		String target_code,
+		double conversion_rate,
+		double conversion_result,
 		Map<String, Double> conversion_rates
 		) {
 }

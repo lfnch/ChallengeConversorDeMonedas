@@ -6,13 +6,25 @@ package com.lfn.challengeconversordemodenas.modelos;
  */
 public enum TipoMoneda {
 	USD("USD", "Dólar Estadounidense"),
+	ARS("ARS", "Peso Argentino"),
+	COP("COP", "Peso Colombiano"),
+	BOB("BOB", "Boliviano"),
+	BRL("BRL", "Real Brasileño"),
+	CLP("CLP", "Peso Chileno"),
+	CNY("CNY", "Yuan Chino"),
+	CAD("CAD", "Dólar Canadiense"),
+	EUR("EUR", "Euro"),
+	GBP("GBP", "Libra Esterlina"),
+	INR("INR", "Rupia India"),
+	MXN("MXN", "Peso Mexicano");
+	
+	/*
     AED("AED", "Dirham de los Emiratos Árabes Unidos"),
     AFN("AFN", "Afgani Afganí"),
     ALL("ALL", "Lek Albanés"),
     AMD("AMD", "Dram Armenio"),
     ANG("ANG", "Florín de las Antillas Neerlandesas"),
     AOA("AOA", "Kwanza Angoleño"),
-    ARS("ARS", "Peso Argentino"),
     AUD("AUD", "Dólar Australiano"),
     AWG("AWG", "Florín Arubano"),
     AZN("AZN", "Manat Azerí"),
@@ -24,19 +36,13 @@ public enum TipoMoneda {
     BIF("BIF", "Franco Burundés"),
     BMD("BMD", "Dólar Bermudeño"),
     BND("BND", "Dólar de Brunei"),
-    BOB("BOB", "Boliviano"),
-    BRL("BRL", "Real Brasileño"),
     BSD("BSD", "Dólar Bahameño"),
     BTN("BTN", "Ngultrum Butanés"),
     BWP("BWP", "Pula Botswanés"),
     BYN("BYN", "Rublos Bielorruso"),
     BZD("BZD", "Dólar Beliceño"),
-    CAD("CAD", "Dólar Canadiense"),
     CDF("CDF", "Franco Congoleño"),
     CHF("CHF", "Franco Suizo"),
-    CLP("CLP", "Peso Chileno"),
-    CNY("CNY", "Yuan Chino"),
-    COP("COP", "Peso Colombiano"),
     CRC("CRC", "Colón Costarricense"),
     CUP("CUP", "Peso Cubano"),
     CVE("CVE", "Escudo Caboverdiano"),
@@ -48,11 +54,9 @@ public enum TipoMoneda {
     EGP("EGP", "Libra Egipcia"),
     ERN("ERN", "Nakfa Eritreo"),
     ETB("ETB", "Birr Etíope"),
-    EUR("EUR", "Euro"),
     FJD("FJD", "Dólar de Fiyi"),
     FKP("FKP", "Libra de las Malvinas"),
     FOK("FOK", "Corona de las Islas Feroe"),
-    GBP("GBP", "Libra Esterlina"),
     GEL("GEL", "Lari Georgiano"),
     GGP("GGP", "Libra de Guernsey"),
     GHS("GHS", "Cedi Ghanés"),
@@ -69,7 +73,6 @@ public enum TipoMoneda {
     IDR("IDR", "Rupia Indonesa"),
     ILS("ILS", "Nuevo Shekel Israelí"),
     IMP("IMP", "Libra de la Isla de Man"),
-    INR("INR", "Rupia India"),
     IQD("IQD", "Dinar Iraquí"),
     IRR("IRR", "Rial Iraní"),
     ISK("ISK", "Corona Islandesa"),
@@ -103,7 +106,6 @@ public enum TipoMoneda {
     MUR("MUR", "Rupia de Mauricio"),
     MVR("MVR", "Rufiyaa Maldivo"),
     MWK("MWK", "Kwacha Malauí"),
-    MXN("MXN", "Peso Mexicano"),
     MYR("MYR", "Ringgit Malasio"),
     MZN("MZN", "Metical Mozambicano"),
     NAD("NAD", "Dólar Namibio"),
@@ -166,7 +168,8 @@ public enum TipoMoneda {
     YER("YER", "Rial Yemení"),
     ZAR("ZAR", "Rand Sudafricano"),
     ZMW("ZMW", "Kwacha Zambiano"),
-    ZWL("ZWL", "Dólar Zimbabuense");
+    ZWL("ZWL", "Dólar Zimbabuense")
+    */
 	
 	private final String abreviatura;
     private final String nombre;
@@ -189,5 +192,14 @@ public enum TipoMoneda {
     @Override
     public String toString() {
         return abreviatura + " - " + nombre;
+    }
+    
+    public static boolean existeAbreviatura(String abreviatura) {
+        for (TipoMoneda moneda : TipoMoneda.values()) {
+            if (moneda.getAbreviatura().equals(abreviatura)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
