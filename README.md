@@ -7,9 +7,6 @@
 4. [Cómo usarlo](#Cómo-usarlo)
 5. [Autores del proyecto.](#Autores-del-proyecto)
 
-
-
-
 ## Sobre el Desafío
 
 En este emocionante desafío de programación, te invitamos a construir 
@@ -41,7 +38,7 @@ Permite Leer el historial de conversiones realizadas.
 ## Cómo usarlo
 
 Clona el repositorio en tu carpeta de trabajo y ejecuta el codigo, la interfaz grafica es tipo consola.
-
+```bash
 ****************************************************
     Challenge Conversor de Monedas, Alura Latam
       Por : Felipe Nieves => Grupo 7 Back End
@@ -122,7 +119,7 @@ Estado : Mostrando resultado.
 
 1000,00 USD EQUIVALE A : 4217085,10 COP
 -----------------------------------------------------
-
+```
 # Autores del proyecto
 
 Luis Felipe Nieves Ch
