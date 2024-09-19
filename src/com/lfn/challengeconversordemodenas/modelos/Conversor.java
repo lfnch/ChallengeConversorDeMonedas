@@ -26,18 +26,19 @@ public class Conversor {
 		System.out.println("Estado : Conectando con la api.");
 		
 		if(this._api == "exchageRate") {
-			/*
-			 * https://v6.exchangerate-api.com/v6/88eed3b66dc80cc3ac33c607/latest/USD
-			 */
-			apiUrl = "https://v6.exchangerate-api.com/v6/88eed3b66dc80cc3ac33c607/pair/" + this._monedaDe + "/" + this._monedaA + "/" + this._valor;
+			String idKey = "88eed3b66dc80cc3ac33c607";
+			apiUrl = "https://v6.exchangerate-api.com/v6/" + idKey + "/pair/" + this._monedaDe + "/" + this._monedaA + "/" + this._valor;
 		}
 		
 		if(this._api == "openExchangeRates") {
-			apiUrl = "https://openexchangerates.org/api/latest.json?app_id=2395d22fd3314112bf566cbc246819b8";
+			String idKey = "2395d22fd3314112bf566cbc246819b8";
+			apiUrl = "https://openexchangerates.org/api/latest.json?app_id=" + idKey;
 		}
 		
 		if(this._api == "coinGecko") {
-			apiUrl = "";
+			/*Es para criptoMonedas */
+			String idKey = "";
+			//apiUrl = "https://pro-api.coingecko.com/api/v3/ping?x_cg_demo_api_key=" + idKey;
 		}
 		
 		//Conectar al api y obtener los datos
