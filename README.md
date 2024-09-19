@@ -1,10 +1,11 @@
 # Conversor de Moneda - Challenge ONE - Java - Back end
 
-## Indice
-
-*[1](#Sobre el Desafío)
-
-*[2](#Descripción proyecto)
+## Índice
+1. [Introducción](#introducción)
+2. [Instalación](#instalación)
+3. [Uso](#uso)
+4. [Contribuciones](#contribuciones)
+5. [Licencia](#licencia)
 
 
 
