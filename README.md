@@ -1,16 +1,16 @@
 # Conversor de Moneda - Challenge ONE - Java - Back end
 
 ## Índice
-1. [Introducción](#introducción)
-2. [Instalación](#instalación)
-3. [Uso](#uso)
-4. [Contribuciones](#contribuciones)
-5. [Licencia](#licencia)
+1. [Sobre el Desafío](#Sobre el Desafío)
+2. [Descripción proyecto](#Descripción proyecto)
+3. [funcionalidades](#funcionalidades)
+4. [Cómo usarlo](#Cómo usarlo)
+5. [Autores del proyecto.](#Autores del proyecto.)
 
 
 
 
-# Sobre el Desafío
+## Sobre el Desafío
 
 En este emocionante desafío de programación, te invitamos a construir 
 tu propio Conversor de Monedas. Aprenderás a realizar solicitudes a 
@@ -28,17 +28,17 @@ Análisis de la Respuesta JSON;
 Filtro de Monedas;
 Exibición de Resultados a los usuarios;
 
-# Descripción proyecto
+## Descripción proyecto
 
 Pequeña app desarrollada en JAVA para la presentacion de la solucion al challenge One,
 app que realiza conversion de monedas, con Apis distintas.
 
-# funcionalidades
+## funcionalidades
 
 Permite escoger la APi con la que desee realizar la conversion,
 Permite Leer el historial de conversiones realizadas.
 
-# Cómo pueden usarlo los usuarios
+## Cómo usarlo
 
 Clona el repositorio en tu carpeta de trabajo y ejecuta el codigo, la interfaz grafica es tipo consola.
 
@@ -123,7 +123,7 @@ Estado : Mostrando resultado.
 1000,00 USD EQUIVALE A : 4217085,10 COP
 -----------------------------------------------------
 
-# Autores del proyecto.
+# Autores del proyecto
 
 Luis Felipe Nieves Ch
 Grupo 7 Back End => ORACLE NEXT, ALURA LATAM
