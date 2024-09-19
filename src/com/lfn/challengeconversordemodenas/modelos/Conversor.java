@@ -33,7 +33,7 @@ public class Conversor {
 		}
 		
 		if(this._api == "openExchangeRates") {
-			apiUrl = "";
+			apiUrl = "https://openexchangerates.org/api/latest.json?app_id=2395d22fd3314112bf566cbc246819b8";
 		}
 		
 		if(this._api == "coinGecko") {
@@ -56,11 +56,13 @@ public class Conversor {
 			}
 			
 			if(this._api == "openExchangeRates") {
-				apiCoinGecko = analizar.fromJson(json, ApiCoinGecko.class);
+				apiOpenExchangesRates = analizar.fromJson(json, ApiOpenExchangeRates.class);
+				double valorDolaresModenaDe = this._valor / apiOpenExchangesRates.getValor(this._monedaDe);
+				valorConversion = apiOpenExchangesRates.getValor(this._monedaA) * valorDolaresModenaDe;
 			}
 			
 			if(this._api == "coinGecko") {
-				apiOpenExchangesRates = analizar.fromJson(json, ApiOpenExchangeRates.class);
+				apiCoinGecko = analizar.fromJson(json, ApiCoinGecko.class);
 			}
 			
 			System.out.println("Estado : Guardando registro.");
